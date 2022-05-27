@@ -1,6 +1,8 @@
 const initialState = {
-  facts: [],
+  allFacts: [],
+  filtredFacts: [],
   isLoading: false,
+  info: null,
 };
 
 const CatFactsReducer = (state = initialState, action) => {
@@ -8,12 +10,22 @@ const CatFactsReducer = (state = initialState, action) => {
     case "GET_RANDOM_FACTS":
       return {
         ...state,
-        facts: action.facts,
+        allFacts: action.facts,
+      };
+    case "GET_FACT_INFO":
+      return {
+        ...state,
+        info: action.info,
       };
     case "SET_IS_LOADING":
       return {
         ...state,
         isLoading: action.isLoading,
+      };
+    case "DELETE_INFO":
+      return {
+        ...state,
+        info: null,
       };
     default:
       return state;

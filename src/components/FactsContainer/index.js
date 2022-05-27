@@ -7,8 +7,8 @@ import Loading from "../Loading";
 
 const FactsContainer = () => {
   const state = useSelector((state) => state);
-  const { facts, isLoading } = state;
-  const { pagination, onChange, pageSize } = usePagination(facts, 9);
+  const { allFacts, isLoading } = state;
+  const { pagination, onChange, pageSize } = usePagination(allFacts, 9);
 
   const { data, minIndex, maxIndex, current } = pagination;
 

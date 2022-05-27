@@ -10,3 +10,8 @@ export const getRandomFactsApi = async () => {
     .then((res) => res.data);
   return response;
 };
+
+export const getFactInfoApi = async (id) => {
+  const response = await instance.get(`/facts/${id}`).then((res) => res.data);
+  return response;
+};
