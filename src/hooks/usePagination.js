@@ -18,6 +18,14 @@ const usePagination = (array, pageSize) => {
         minIndex: 0,
         maxIndex: pageSize,
       }));
+    } else {
+      setPagination({
+        data: [],
+        totalPage: 0,
+        current: 1,
+        minIndex: 0,
+        maxIndex: 0,
+      });
     }
   }, [array]);
 
