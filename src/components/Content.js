@@ -6,7 +6,7 @@ import { getRandomFactsThunk } from "../redux/actions";
 
 const Content = () => {
   const dispatch = useDispatch();
-  const facts = useSelector((state) => state.facts);
+  const facts = useSelector((state) => state.allFacts);
 
   useEffect(() => {
     if (facts.length === 0) {
