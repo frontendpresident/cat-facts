@@ -1,9 +1,16 @@
 import { Button, Card, Row } from "antd";
-import React from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 
 const Fact = ({ data }) => {
   const { text, _id } = data;
+
+  const getTextSize = useCallback(() => {
+    if (text.split(" ").length > 10) {
+      return `${text.substring(0, 80)} ...`;
+    }
+    return text.substring(0, 80);
+  }, []);
 
   return (
     <Row className="facts">
@@ -15,7 +22,7 @@ const Fact = ({ data }) => {
         ]}
       >
         <Row className="text">
-          <p>{text.substring(0, 50)}</p>
+          <p>{getTextSize()}</p>
         </Row>
       </Card>
     </Row>

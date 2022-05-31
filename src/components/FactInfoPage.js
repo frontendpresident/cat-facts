@@ -57,7 +57,11 @@ const FactInfoPage = () => {
 
         <Divider />
 
-        <Row align="middle" justify="space-between">
+        <Row
+          align="middle"
+          justify="space-between"
+          className="actions-container"
+        >
           <Row align="middle">
             <Title level={3}>Verified: </Title>
             {getStatus(info.status.verified)}
